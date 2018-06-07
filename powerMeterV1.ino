@@ -10,9 +10,9 @@
 HX711 scale(D5, D4);    // parameter "gain" is ommited; the default value 128 is used by the library
 
 /* WiFi Config */
-const char* ssid = "searching...";
-const char* password = "YYwVu^@r434j&mFj";
-const char* mqtt_server = "10.1.1.63";
+const char* ssid = "ssid";
+const char* password = "password";
+const char* mqtt_server = "address";
 
 /* Variable Config */
 int16_t GyZ;
@@ -72,7 +72,7 @@ void reconnect() {
     String clientId = "ESP8266Client-";
     clientId += String(random(0xffff), HEX);
     // Attempt to connect
-    if (client.connect("10.1.1.68", "pi", "MykeWasRight")) { // User / password for the MQTT server
+    if (client.connect("address", "username", "password")) { // User / password for the MQTT server
       Serial.println("connected"); 
       } 
       else {
